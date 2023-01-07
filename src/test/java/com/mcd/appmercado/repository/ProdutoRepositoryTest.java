@@ -9,6 +9,8 @@ class ProdutoRepositoryTest {
     @Test
     void setupClass() {
         String nul = "null";
+        String nu2l = "null";
+        String nul3 = "null";
         assertNotNull(nul);
     }
 }
