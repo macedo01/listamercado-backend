@@ -4,11 +4,12 @@ import com.mcd.appmercado.model.Produto;
 import com.mcd.appmercado.repository.ProdutoRepository;
 import com.mcd.appmercado.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-@Component
+@Service
 public class ProdutoServiceImpl implements ProdutoService {
 
     @Autowired
@@ -18,24 +19,18 @@ public class ProdutoServiceImpl implements ProdutoService {
     public Produto criarNovoProduto(Produto produto) {
         return produtoRepository.save(produto);
     }
-
-    @Override
-    public Produto alterarProduto(Produto produto) {
-        return null;
-    }
-
     @Override
     public List<Produto> listarTodos() {
-        return null;
+        return (List<Produto>) produtoRepository.findAll();
     }
 
     @Override
     public List<Produto> buscarPorPalavraChave(String chave) {
-        return null;
+        return produtoRepository.findAllByNomeContaining(chave);
     }
 
     @Override
-    public Produto buscarPorId(Integer id) {
-        return null;
+    public Optional<Produto> buscarPorId(Integer id) {
+        return produtoRepository.findById(id);
     }
 }
