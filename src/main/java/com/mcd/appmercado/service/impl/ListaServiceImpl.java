@@ -5,9 +5,11 @@ import com.mcd.appmercado.model.Lista;
 import com.mcd.appmercado.repository.ListaRepository;
 import com.mcd.appmercado.service.ListaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ListaServiceImpl implements ListaService {
 
     @Autowired

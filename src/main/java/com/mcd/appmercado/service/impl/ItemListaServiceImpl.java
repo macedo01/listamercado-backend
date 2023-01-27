@@ -4,7 +4,9 @@ import com.mcd.appmercado.model.ItemLista;
 import com.mcd.appmercado.repository.ItemListaRepository;
 import com.mcd.appmercado.service.ItemListaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ItemListaServiceImpl implements ItemListaService {
 
     @Autowired

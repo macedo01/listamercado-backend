@@ -1,8 +1,10 @@
 package com.mcd.appmercado.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "tbl_itemlista")
 public class ItemLista {
     @Id
