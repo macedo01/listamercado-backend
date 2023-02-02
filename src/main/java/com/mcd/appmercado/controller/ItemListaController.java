@@ -15,6 +15,7 @@ public class ItemListaController {
 
     @PostMapping("/itemlista")
     public ResponseEntity<ItemLista> inserir(@RequestBody ItemLista novo){
+        System.out.println(novo);
         ItemLista res = service.inserirItem(novo);
         if (res != null) {
             return ResponseEntity.ok(res);

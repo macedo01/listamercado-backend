@@ -1,5 +1,6 @@
 package com.mcd.appmercado.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,5 +24,6 @@ public class Lista {
     @Column(name = "status", nullable = false)
     private Integer status;
     @OneToMany(mappedBy = "lista", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("lista")
     private List<ItemLista> itens;
 }

@@ -1,5 +1,6 @@
 package com.mcd.appmercado.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,5 +23,6 @@ public class ItemLista {
     private Produto produto;
     @ManyToOne
     @JoinColumn(name = "tbl_lista_id_lista")
+    @JsonIgnoreProperties("itens")
     private Lista lista;
 }
