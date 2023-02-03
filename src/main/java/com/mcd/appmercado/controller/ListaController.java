@@ -39,7 +39,7 @@ public class ListaController {
     }
 
     @PutMapping("/listas/{id}")
-    public ResponseEntity<Lista> alterarLista(@PathVariable Integer id){
+    public ResponseEntity<Lista> alterarListas(@PathVariable Integer id){
         Lista res = service.fecharLista(id);
         if (res != null) {
             return ResponseEntity.ok(res);
