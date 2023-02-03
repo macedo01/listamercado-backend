@@ -27,10 +27,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Discord Notify
-
-    - uses: stegzilla/discord-notify@v4
     - name: Notify discord 1
+    - uses: stegzilla/discord-notify@v4
       with:
         webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
       
