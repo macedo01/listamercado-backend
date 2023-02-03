@@ -41,7 +41,7 @@ jobs:
       uses: stegzilla/discord-notify@v4
       with:
         webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        title: Trigger to discord :) 
-        message: testando a parada po
+        title: Alguém fez um push no back-end :) 
+        message: da uma olhada pae https://scholar.google.com/
         
 
