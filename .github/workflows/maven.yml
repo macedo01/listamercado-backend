@@ -28,7 +28,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - uses: stegzilla/discord-notify@v4  
-    - name: Notify discord 1
-      with:
-        webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+    - uses: th0th/notify-discord@v0.4.1
+    - name: Notify discord 2
+      if: ${{ always() }}
+      env:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_JOB_NAME: "Build and deploy"
+        GITHUB_JOB_STATUS: ${{ job.status }}
+
