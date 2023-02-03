@@ -28,14 +28,13 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-      
+    - uses: stegzilla/discord-notify@v4  
     - name: Notify discord 1
-    - uses: stegzilla/discord-notify@v4
       with:
         webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      
+        
+    - uses: th0th/notify-discord@v0.4.1
     - name: Notify discord 2
-      uses: th0th/notify-discord@v0.4.1
       if: ${{ always() }}
       env:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
